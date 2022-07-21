@@ -36,3 +36,11 @@ terraform apply
 lambda1に project-name=eagle というタグが入ってるので
 user1は失敗し
 user2は成功する。
+
+
+# メモ
+
+とりあえず全リソースに
+project-name
+的なtagを振っておくと
+あとで便利かもしれない。
