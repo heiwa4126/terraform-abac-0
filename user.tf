@@ -71,8 +71,8 @@ data "aws_iam_policy_document" "user" {
       "lambda:UpdateAlias",
       "lambda:UpdateFunctionCode"
     ]
-    # resources = ["arn:aws:lambda:*:*:function:*"]
-    resources = ["*"]
+    resources = ["arn:aws:lambda:*:*:function:*"]
+    # resources = ["*"]
 
     condition {
       test     = "StringEquals"

@@ -13,7 +13,7 @@ Terraformで作ってみた。
 gpg --output pgp/my-public-key.gpg --export heiwa4126  # IDは自分のに変える
 ```
 
-で、公開鍵をエクスポートしておく。
+で、公開鍵をエクスポートしておく(アクセスキーのシークレット取るのに必要)。
 
 さらに
 ```bash
