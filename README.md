@@ -1,15 +1,9 @@
-# terraform-imauser-accesskey
+# terraform-abac-0
 
-TerraformでIAMユーザを作りアクセスキーを得るサンプル
-
-PGPキーがいる。なければ `gpg --gen-key`
-
-
-# 参考リンク
-
-- [Create AWS IAM User Login Profile with PGP encrypted password in Terraform | DevCoops](https://devcoops.com/create-aws-iam-user-login-profile-pgp-ecrypted-password-terraform/)
-- [Decrypt iam_user_login_profile password in Terraform | DevCoops](https://devcoops.com/decrypt-aws-iam-user-login-profile-password-terraform/)
-- [aws_iam_access_key | Resources | hashicorp/aws | Terraform Registry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key)
+このブログ
+[Scaling AWS Lambda permissions with Attribute-Based Access Control (ABAC) | AWS Compute Blog](https://aws.amazon.com/jp/blogs/compute/scaling-aws-lambda-permissions-with-attribute-based-access-control-abac/)
+の最初のサンプルを
+Terraformで作ってみた。
 
 
 # 動かし方
@@ -30,12 +24,11 @@ terraform apply
 で、デプロイ。正常終了したら
 
 ```bash
-./decode_secret.sh
+./make_env.sh
+./decode_secret.sh  # GPGのパスフレーズ聞いてくる
 ```
 
-で、GPGのパスフレーズ入れるとデコードされる。
-
-
-# メモ
-
-いらんコードがけっこう入ったままでスイマセン。
+テストの実行は
+```bash
+./invoke_test.sh
+```

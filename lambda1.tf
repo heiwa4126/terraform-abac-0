@@ -24,11 +24,11 @@ module "lambda1" {
 }
 
 resource "aws_lambda_function" "lambda1" {
-  filename         = module.lambda1_zip.zip.output_path
-  function_name    = local.lambda1_name
-  role             = module.lambda1.role.arn
-  handler          = "app.lambda_handler"
-  architectures    = ["x86_64"] # if region not support, comment this line
+  filename      = module.lambda1_zip.zip.output_path
+  function_name = local.lambda1_name
+  role          = module.lambda1.role.arn
+  handler       = "app.lambda_handler"
+  # architectures    = ["x86_64"] # if region not support, comment this line
   publish          = true
   source_code_hash = module.lambda1_zip.zip.output_base64sha256
   runtime          = var.python
