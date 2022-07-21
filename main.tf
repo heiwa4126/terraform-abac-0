@@ -34,3 +34,8 @@ provider "aws" {
 resource "random_id" "id" {
   byte_length = 8
 }
+
+#--------
+output "region" {
+  value = var.region
+}
