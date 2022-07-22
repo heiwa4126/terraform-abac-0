@@ -40,7 +40,13 @@ user2は成功する。
 
 # メモ
 
-とりあえず全リソースに
+とりあえずABACとは無関係に全リソースに
 project-name
 的なtagを振っておくと
 あとで便利かもしれない。
+
+いまのところユーザがタグを編集できてしまう。
+- principalでiam:TagRole, iam:UnTagRole を 禁じる
+- リソースで*:CreateTags, *:DeleteTag を 禁じる
+
+しないとダメ... ABACめんどうだな。
